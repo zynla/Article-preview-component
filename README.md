@@ -46,7 +46,7 @@ Here is a screenshot of the mobile active solution:
 ### Links
 
 - Solution URL: [Frontend Mentor](...)
-- Live Site URL: [Vercel.com](...)
+- Live Site URL: [Vercel.com](https://article-preview-component-ochre.vercel.app/)
 
 ## My process
 
