@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+//Colors: 
+
+$primary-clr: hsl(217, 19%, 35%);
+$secondary-clr: hsl(214, 17%, 51%);
+$third-clr: hsl(212, 23%, 69%);
+$background-clr: hsl(210, 46%, 95%);
+$basic-clr: hsl(0, 0%, 100%);
+
+$ff-text: Manrope;
+$fs-text: .8rem;
+$fw-500: 500;
+$fw-700: 700;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-clr;
+    font-family: $ff-text;
+}
+
+.main{
+    text-align: left;
+    background-color: $basic-clr;
+    border-radius: .7rem;
+    box-shadow: 0 1rem 4rem rgba(158, 175, 194, 0.5 );
+    &-content{
+        &__title{
+            color: $primary-clr;
+            margin: 2rem 2rem 1rem 2rem;
+        }
+        &__description{
+            color: $secondary-clr;
+            font-weight: $fw-500;
+            font-size: $fs-text;
+            margin: 0 2rem 1rem 2rem;
+            line-height: 1.3rem;
+        }
+    }
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 .7rem .7rem;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: $basic-clr;
+    &-profile{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        &__avatar{
+            width: 2.5rem;
+            border-radius: 100%;
+        }
+        &__content{
+            display: flex;
+            justify-content: center;
+            flex-direction: column  ;
+            &-title{
+                color: $primary-clr;
+                font-weight: $fw-700;           
+            }
+            &-date{
+                color: $third-clr;
+                font-weight: $fw-500;
+                font-size: $fs-text;
+            }
+        }
+    }
+    &-button{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        border: 0 none;
+        background-color: $background-clr;
+        &__share{
+            color: $primary-clr;
+        }
+    }  
+}
+
+
+//MOBILE
+@media (max-width: 768px){
+    body{
+        padding: 4rem 2rem;
+    }
+    .main{
+        &-img__picture{
+            display: block;
+            border-radius: .7rem .7rem 0 0;
+            width: 100%;
+        }
+    }
+    .container{
+        display: contents;
+        align-items: center;
+    }
+    .footer-popup{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: .7rem 2rem .6rem 0;
+        border-radius: 0 0 .7rem .7rem;
+        background-color: $primary-clr;
+        gap: 1rem;
+        &__share{
+            color: $third-clr;
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            font-size: $fs-text;
+            font-weight: $fw-500;    
+        }
+        &__icon{
+            width: 1.2rem
+        }
+    }
+
+}
+
+//DESKTOP
+@media (min-width: 769px){
+    body{
+        padding: 10rem 6rem;
+    }
+    .main{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1.5fr;
+        justify-items: start;
+        &-img__picture{
+            display: block;
+            border-radius: .7rem 0 0 .7rem;
+            width: 100%;
+            height:-webkit-fill-available;
+
+        }
+        &-content{
+            &__title{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .container{
+        position: relative;
+        display: inline-block;
+    }
+    .footer{
+        &-popup{
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $primary-clr;
+            gap: 1rem;
+            position: absolute;
+            bottom: 185%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1rem 2rem;
+            border-radius: .7rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            &::before {
+                content: "";
+                position: absolute;
+                top: 78%;
+                left: 45%;
+                transform: translateY(50%);
+                border-width: 11px;
+                border-style: solid;
+                border-color: $primary-clr transparent transparent transparent;
+            }
+            &__share{
+                color: $third-clr;
+                text-transform: uppercase;
+                letter-spacing: .2rem;
+                font-size: .7rem;
+                font-weight: $fw-500;
+            }
+        }
+    }
+}
+
+
+//JAVASCRIPT CLICK: 
+.hover{
+    background-color: $secondary-clr;
+    .footer-button__share{
+        color: $basic-clr;
+    }
+}
+.hidden{
+    display: none;
+}
+.primary-clr{
+    background-color: $primary-clr;
+}
+.flex{
+    display: flex;
+}
