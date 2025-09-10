@@ -54,6 +54,7 @@ Here is a screenshot of the mobile active solution:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- BEM
 - Flexbox
 - CSS Grid
 - Mobile-first workflow

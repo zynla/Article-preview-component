@@ -23,6 +23,7 @@ $fw-700: 700;
 
 body{
     margin: 0 auto;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,12 +31,16 @@ body{
     background-color: $background-clr;
     font-family: $ff-text;
 }
-
 .main{
     text-align: left;
     background-color: $basic-clr;
     border-radius: .7rem;
     box-shadow: 0 1rem 4rem rgba(158, 175, 194, 0.5 );
+    &-img__picture{
+        display: block;
+        border-radius: .7rem .7rem 0 0;
+        width: 100%;
+    }
     &-content{
         &__title{
             color: $primary-clr;
@@ -50,6 +55,7 @@ body{
         }
     }
 }
+
 .footer{
     display: flex;
     flex-direction: row;
@@ -58,6 +64,30 @@ body{
     border-radius: 0 0 .7rem .7rem;
     padding: 1rem 2rem 1rem 2rem;
     background-color: $basic-clr;
+    &-container{
+        display: contents;
+        align-items: center;
+    }
+    &-popup{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: .7rem 2rem .6rem 0;
+        border-radius: 0 0 .7rem .7rem;
+        background-color: $primary-clr;
+        gap: 1rem;
+        &__share{
+            color: $third-clr;
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            font-size: $fs-text;
+            font-weight: $fw-500;    
+        }
+        &__icon{
+            width: 1.2rem
+        }
+    }
     &-profile{
         display: flex;
         flex-direction: row;
@@ -82,6 +112,7 @@ body{
         }
     }
     &-button{
+        cursor: pointer;
         width: 2rem;
         height: 2rem;
         border-radius: 100%;
@@ -93,48 +124,8 @@ body{
     }  
 }
 
-
-//MOBILE
-@media (max-width: 768px){
-    body{
-        padding: 4rem 2rem;
-    }
-    .main{
-        &-img__picture{
-            display: block;
-            border-radius: .7rem .7rem 0 0;
-            width: 100%;
-        }
-    }
-    .container{
-        display: contents;
-        align-items: center;
-    }
-    .footer-popup{
-        display: none;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: .7rem 2rem .6rem 0;
-        border-radius: 0 0 .7rem .7rem;
-        background-color: $primary-clr;
-        gap: 1rem;
-        &__share{
-            color: $third-clr;
-            text-transform: uppercase;
-            letter-spacing: .2rem;
-            font-size: $fs-text;
-            font-weight: $fw-500;    
-        }
-        &__icon{
-            width: 1.2rem
-        }
-    }
-
-}
-
 //DESKTOP
-@media (min-width: 769px){
+@media (min-width: 768px){
     body{
         padding: 10rem 6rem;
     }
@@ -143,12 +134,12 @@ body{
         align-items: center;
         grid-template-columns: 1fr 1.5fr;
         justify-items: start;
+        width: 50rem;
         &-img__picture{
             display: block;
             border-radius: .7rem 0 0 .7rem;
-            width: 100%;
-            height: 100%;
-
+            min-width: 100%;
+            min-height: 100%;
         }
         &-content{
             &__title{
@@ -156,11 +147,11 @@ body{
             }
         }
     }
-    .container{
-        position: relative;
-        display: inline-block;
-    }
     .footer{
+        &-container{
+            position: relative;
+            display: inline-block;
+        }
         &-popup{
             display: none;
             flex-direction: row;
