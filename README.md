@@ -69,6 +69,8 @@ Here is a screenshot of the mobile active solution:
 
 - `toggle()` adds a class to an element if it’s not already there, and removes it if it is — like switching the class on and off.
 
+- `window.innerWidth` returns the interior width of the browser’s viewport in pixels, useful for adjusting a page’s behavior or style based on screen size.
+
 
 ### Useful resources
 
